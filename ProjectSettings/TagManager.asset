@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - UI
+  - Asteroid
+  - Border
   layers:
   - Default
   - TransparentFX

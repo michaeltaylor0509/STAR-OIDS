@@ -13,6 +13,8 @@ public class Asteroid : MonoBehaviour {
 
     [SerializeField] private int fragmentCount = 2;
 
+    [SerializeField] private AudioClip destroySound;
+
     private Vector2 direction = Vector2.down;
     private Collider2D col;
 
@@ -37,6 +39,8 @@ public class Asteroid : MonoBehaviour {
     public void Fragment(Vector2 impactDirection) {
         col.enabled = false;
         ScoreManager.AddScore(scoreValue);
+
+            AudioSource.PlayClipAtPoint(destroySound, transform.position);
 
         // si nextSize NO es None, significa que tenemos que generar fragmentos
         if (nextSize != NextSize.None) {

@@ -14,6 +14,8 @@ public class MainMenuManager : MonoBehaviour {
     public static bool openConfigOnLoad = false;
 
     void Start() {
+        // aplica el volumen guardado nada mas arrancar el juego,sin esperar a que el jugador abra Configuracion
+        AudioListener.volume = PlayerPrefs.GetFloat("MasterVolume", 1f);
         // si venimos de Pausa pidiendo Config directamente, lo abrimos
         // y "apagamos" el aviso para que la proxima vez cargue normal
         if (openConfigOnLoad) {
@@ -49,7 +51,7 @@ public class MainMenuManager : MonoBehaviour {
         mainMenuPanel.SetActive(true);
     }
 
-    public void OpenYouTube() {
-        Application.OpenURL("https://www.youtube.com/@TU_CANAL");
+    public void OpenGitHub() {
+        Application.OpenURL("https://github.com/michaeltaylor0509/STAR-OIDS");
     }
 }

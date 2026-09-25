@@ -8,6 +8,10 @@ public class Gun : MonoBehaviour {
     [SerializeField] private ObjectPool bulletPool;
 
     [SerializeField] private float fireCooldown = 0.5f; // tiempo minimo entre disparos para no spamear balas
+    
+    // referencia al AudioSource de este cañon, y el sonido a reproducir
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootSound;
     // esta es necesaria para el cooldown, guarda info entre frames al estar fuera de la función Update, y es privada para saber si ha pasado tiempo o no
     // nextFireTime = 0;
     // disparo en el segundo 2.0 y como 2.0 >= 0 es true disparamos y nextFireTime = 2.0 + 0.3 = 2.3
@@ -37,6 +41,9 @@ public class Gun : MonoBehaviour {
             // tras crear/obtener la copia, le decimos hacia donde va la bala (hacia donde apunta el player)
             bulletScript.targetVector = transform.up;
             // importante para arreglar el error de disparo con bugs visuales como antes con Quaternion.identity, que es la rotación por defecto (0,0,0) y no la del player, que es la que queremos para que la bala salga hacia donde apunta el player
+        
+            // reproduce el sonido de disparo cada vez que se dispara
+            audioSource.PlayOneShot(shootSound);
         }
     }
 }

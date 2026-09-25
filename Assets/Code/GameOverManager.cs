@@ -12,6 +12,10 @@ public class GameOverManager : MonoBehaviour {
     [SerializeField] private TMP_Text finalScoreText;   // texto de puntuación final
     [SerializeField] private TMP_Text maxStreakText;    // texto de racha máxima
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip gameOverSound;
+    [SerializeField] private AudioSource musicSource;
+
     void Awake() {
         // Awake se ejecuta ANTES que Start de cualquier otro script,
         // así la instancia ya está lista cuando otros scripts la necesiten
@@ -25,6 +29,9 @@ public class GameOverManager : MonoBehaviour {
         finalScoreText.text = "Puntuación: " + Player.SCORE;
         maxStreakText.text = "x" + ScoreMultiplier.MaxMultiplierReached;
 
+        audioSource.PlayOneShot(gameOverSound);
+        musicSource.Stop();
+        
         Time.timeScale = 0f; // congelamos el juego entero
     }
 

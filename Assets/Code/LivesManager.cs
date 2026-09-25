@@ -9,6 +9,9 @@ public class LivesManager : MonoBehaviour {
     [SerializeField] private int startingLives = 3; // con cuántas vidas empieza la partida
     [SerializeField] private TMP_Text livesText; // el texto del HUD que muestra las vidas
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip loseLifeSound;
+
     private int currentLives; // las vidas que quedan ahora mismo
 
     void Awake() {
@@ -26,6 +29,8 @@ public class LivesManager : MonoBehaviour {
     public void LoseLife() {
         currentLives--;
         UpdateLivesText();
+
+        audioSource.PlayOneShot(loseLifeSound);
 
         // si llegamos a 0 (o menos), es Game Over real
         if (currentLives <= 0) {

@@ -175,3 +175,4 @@ MonoBehaviour:
   scoreValue: 5
   nextSize: 0
   fragmentCount: 0
+  destroySound: {fileID: 8300000, guid: f52c6a29f7b7a554ca695d46b390aacd, type: 3}

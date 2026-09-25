@@ -10,7 +10,7 @@ using UnityEngine;
 // lineas viejas comentadas al lado de las nuevas para ver el cambio exacto
 public class Bullet : MonoBehaviour {
     [SerializeField] private int speed = 10; // velocidad de la bala
-    [SerializeField] private float maxLifeTime = 0.7f; // el tiempo maximo de bala
+    [SerializeField] private float maxLifeTime = 1f; // el tiempo maximo de bala
     public Vector3 targetVector; // la direccion en la que se mueve la bala, asignada desde Gun.cs
     private Collider2D col; // componente collider de la bala, para desactivarlo al impactar
 

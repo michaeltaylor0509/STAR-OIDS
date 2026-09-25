@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
   speed: 2
-  maxLifeTime: 10
+  maxLifeTime: 15
   scoreValue: 15
   nextSize: 2
   fragmentCount: 4

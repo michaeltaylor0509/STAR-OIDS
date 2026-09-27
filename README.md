@@ -8,3 +8,4 @@ STAR-OIDS es un microjuego 2D inspirado en el clásico Asteroids, desarrollado c
 
 Link a Unity Play:
 https://play.unity.com/api/v1/games/game/56f45adb-1a2d-41f7-bbf1-34a557406fa8/build/latest/frame
+https://play.unity.com/en/games/56f45adb-1a2d-41f7-bbf1-34a557406fa8/star-oids
